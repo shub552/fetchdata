@@ -15,8 +15,8 @@ app.get('/data', async (req, res) => {
     const { data } = await axios.get('https://api.wazirx.com/api/v2/tickers');
     const firstTenValues = Object.values(data).slice(0, 10);
     res.status(200).send(firstTenValues);
-  } catch (error) {
-    res.status(500).send(error);
+  } catch (err) {
+    res.status(500).send(err);
   }
 });
 
