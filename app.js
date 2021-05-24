@@ -6,17 +6,17 @@ const path = require('path');
 const publicDirectorypath = path.join(__dirname, "/client");
 app.use(express.static(publicDirectorypath));
 
-app.get('/', (req,res)=>{
-  res.render('index')
+app.get('/', (request,response)=>{
+  response.render('index')
 })
 
-app.get('/data', async (req, res) => {
+app.get('/data', async (reqest, response) => {
   try {
     const { data } = await axios.get('https://api.wazirx.com/api/v2/tickers');
     const firstTenValues = Object.values(data).slice(0, 10);
-    res.status(200).send(firstTenValues);
+    response.status(200).send(firstTenValues);
   } catch (err) {
-    res.status(500).send(err);
+    response.status(500).send(err);
   }
 });
 

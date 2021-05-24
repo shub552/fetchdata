@@ -15,7 +15,6 @@
 }
 img{
     margin-left:40px;
-
 }
 
 
@@ -36,6 +35,11 @@ table {
     
     align-items: center;
     border-spacing: 2px;
+}
+
+.dropdown{
+    margin-left: 45%;
+    margin-top: -65px;
 }
 /*
 #div2{
